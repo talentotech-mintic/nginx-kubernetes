@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: svc-app-ejemplo
+  labels: 
+    app: app-ejemplo
+
+spec:
+  type: LoadBalancer
+  selector:
+    proyecto: app-nginx
+
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
